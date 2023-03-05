@@ -38,20 +38,22 @@ class Rectangle:
             return ("*" * self.width + "\n") * self.height
         
 
-    #  The Square class should be a subclass of Rectangle. When a Square object is created, a single side length is passed in. The __init__ method should store the side length in both the width and height attributes from the Rectangle class.
 
-class Square:
+class Square(Rectangle):
     def __init__(self, side):
-        super().init(side, side)
+        super().__init__(side, side)
         self.width = side
         self.height = side
+
+
+    def __repr__(self):
+        return f'Square(side={self.width})'
 
 
     def set_side(self, new_side):
         self.width = new_side
         self.height = new_side
 
-# # Additionally, the set_width and set_height methods on the Square class should set both the width and height.
 
     def set_width(self, new_side):
         self.width = new_side
@@ -59,11 +61,6 @@ class Square:
 
     def set_height(self, new_side):
         self.height = new_side
-
-# The Square class should be able to access the Rectangle class methods but should also contain a set_side method. If an instance of a Square is represented as a string, it should look like: Square(side=9)
-
-    def __repr__(self):
-        return f'Square(side={self.side})'
 
 
 # get_amount_inside: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
@@ -80,8 +77,9 @@ class Square:
 # print(rect.get_picture())
 
 
-sq = Square(9)
-print(sq.get_area())
-sq.set_side(4)
-print(sq.get_diagonal())
-print(sq)
+# sq = Square(9)
+# print(sq.get_area())
+# sq.set_side(4)
+# print(sq.get_diagonal())
+# print(sq)
+# print(sq.get_picture())
