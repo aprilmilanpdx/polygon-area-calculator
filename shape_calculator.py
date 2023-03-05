@@ -31,7 +31,7 @@ class Rectangle:
         return rectangle_pic
             
     def get_amount_inside(self, shape): 
-        return int(self.get_area() / shape.get_area())
+        return self.get_area() // shape.get_area()
            
 
 class Square(Rectangle):
