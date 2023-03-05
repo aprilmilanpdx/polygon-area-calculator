@@ -34,9 +34,16 @@ class Rectangle:
     def get_picture(self):
         if self.width > 50 or self.height > 50:
             return "Too big for picture."
-        else:
-            return ("*" * self.width + "\n") * self.height
+        rectangle_pic = ("*" * self.width + "\n") * self.height
+        return rectangle_pic
         
+    
+    def get_amount_inside(self, shape): 
+        floor_width = self.width // shape.width
+        floor_height = self.height // self. width
+        return floor_width * floor_height
+    
+    #Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
 
 
 class Square(Rectangle):
@@ -63,9 +70,6 @@ class Square(Rectangle):
         self.height = new_side
 
 
-# get_amount_inside: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
-
-
 
 # rect = Rectangle(5, 10)
 # print(rect.get_area())
@@ -80,6 +84,7 @@ class Square(Rectangle):
 # sq = Square(9)
 # print(sq.get_area())
 # sq.set_side(4)
+# print(sq.get_perimeter())
 # print(sq.get_diagonal())
 # print(sq)
 # print(sq.get_picture())
